@@ -1,0 +1,43 @@
+.order-list-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.order-card {
+    border: 1px solid #ddd;
+    padding: 18px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    background: #fff;
+    transition: 0.2s;
+}
+.order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.order-card h3 {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+.order-card p {
+    margin: 2px 0;
+    color: #555;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 12px;
+}
+.pagination a {
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: #eee;
+    text-decoration: none;
+    color: #333;
+}
+.pagination span {
+    padding: 6px 12px;
+}

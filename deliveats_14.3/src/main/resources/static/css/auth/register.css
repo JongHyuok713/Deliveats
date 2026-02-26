@@ -1,0 +1,98 @@
+/* 컨테이너 */
+.register-container {
+    max-width: 420px;
+    margin: 90px auto;
+    padding: 40px 32px 50px;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 제목 */
+.register-container h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #2ac1bc;
+    margin-bottom: 30px;
+}
+
+/* 폼 */
+#registerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+/* 라벨 */
+#registerForm label {
+    font-weight: 600;
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+/* 입력창 & 셀렉트 */
+#registerForm input,
+#registerForm select {
+    height: 45px;
+    padding: 0 14px;
+    border: 2px solid #e5f2f2;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+    background: #fff;
+}
+
+#registerForm input::placeholder {
+    color: #a0b9b9;
+}
+
+#registerForm input:focus,
+#registerForm select:focus {
+    outline: none;
+    border-color: #2ac1bc;
+    box-shadow: 0 0 0 4px rgba(42, 193, 188, 0.15);
+}
+
+/* 버튼 */
+#registerForm button {
+    margin-top: 18px;
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    background: #2ac1bc;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+#registerForm button:hover {
+    background: #24a9a4;
+}
+
+#registerForm button:active {
+    transform: translateY(1px);
+}
+
+/* 하단 링크 */
+.register-container p {
+    margin-top: 28px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+.register-container a {
+    color: #2ac1bc;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-container a:hover {
+    text-decoration: underline;
+}

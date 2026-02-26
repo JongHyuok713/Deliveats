@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>장바구니 - Deliveats</title>
+    <link rel="stylesheet" th:href="@{/css/cart/cart.css}">
+</head>
+<body>
+<section class="cart-container" layout:fragment="content">
+
+    <h1 class="cart-title">장바구니</h1>
+
+    <!-- 빈 장바구니 -->
+    <div id="cartEmpty" class="cart-empty hidden">
+        <p>장바구니가 비어있습니다.</p>
+        <a th:href="@{/stores}" class="btn primary">가게 보러가기</a>
+    </div>
+
+    <!-- 장바구니 있음 -->
+    <div id="cartArea" class="cart-area hidden">
+
+        <!-- 가게 정보 -->
+        <div class="cart-store">
+            <span class="label">현재 가게</span>
+            <span id="cartStoreName" class="value">-</span>
+            <button id="clearCartBtn" class="btn outline small">비우기</button>
+        </div>
+
+        <!-- 아이템 목록 -->
+        <div id="cartItems" class="cart-items"></div>
+
+        <!-- 결제 요약 -->
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>총 결제금액</span>
+                <strong id="totalPrice">0원</strong>
+            </div>
+            <button id="orderBtn" class="btn primary full">주문하기</button>
+        </div>
+    </div>
+
+</section>
+
+<th:block layout:fragment="scripts">
+    <script type="module" th:src="@{/js/cart/cart-page.js}"></script>
+    <script type="module" th:src="@{/js/order/order-create.js}"></script>
+</th:block>
+</body>
+</html>

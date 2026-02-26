@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>내 주문 내역 - Deliveats</title>
+    <link rel="stylesheet" th:href="@{/css/user/order-list.css}">
+</head>
+<body>
+<section class="order-list-container">
+
+    <h1>내 주문 내역</h1>
+    <div id="orderList"></div>
+    <div class="pagination" id="pagination"></div>
+</section>
+
+<script type="module" th:src="@{/js/user/order-list.js}"></script>
+</body>
+</html>

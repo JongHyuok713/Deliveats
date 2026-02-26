@@ -1,0 +1,17 @@
+.order-pay-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.pay-btn {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    background: #2ac1bc;
+    color: white;
+    border-radius: 14px;
+    font-weight: bold;
+}
+.pay-btn:hover {
+    background: #24a9a4;
+}

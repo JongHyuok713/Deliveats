@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>메뉴 수정</title>
+    <link rel="stylesheet" th:href="@{/css/store/menu-edit.css}">
+</head>
+<body>
+<section class="menu-edit-wrapper" layout:fragment="content">
+
+    <h1 class="page-title">메뉴 수정</h1>
+
+    <div class="editor-container">
+
+        <input type="hidden" id="storeId" th:value="${storeId}">
+        <input type="hidden" id="menuId" th:value="${menuId}">
+
+        <!-- 이미지 영역 -->
+        <div class="image-section">
+            <h3>메뉴 이미지</h3>
+
+            <div id="imagePreview" class="image-preview">
+                <p>이미지를 선택하거나 URL을 입력하세요.</p>
+            </div>
+
+            <label class="upload-btn">
+                이미지 업로드
+                <input type="file" id="uploadImage" accept="image/*">
+            </label>
+
+            <input type="text" id="imageUrl" class="input-url"
+                   placeholder="이미지 URL을 직접 입력할 수도 있습니다.">
+        </div>
+
+        <!-- 메뉴 정보 입력 -->
+        <form class="menu-edit-form" onsubmit="return false;">
+
+            <label>메뉴 이름</label>
+            <input type="text" id="name" required>
+
+            <label>가격</label>
+            <input type="number" id="price" required min="0">
+
+            <label>판매 상태</label>
+            <select id="isAvailable">
+                <option value="true">판매중</option>
+                <option value="false">품절</option>
+            </select>
+
+            <button id="saveMenuBtn" class="save-btn">메뉴 수정하기</button>
+
+        </form>
+
+    </div>
+</section>
+
+<script type="module" th:src="@{/js/store/menu-edit.js}"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OAuth2 로그인 처리중...</title>
+</head>
+<body>
+
+<script>
+    const hash = location.hash || "";
+    const params = new URLSearchParams(hash.replace("#", ""));
+    const token = params.get("accessToken");
+
+    if (token) {
+        localStorage.setItem("accessToken", token);
+        history.replaceState(null, "", "/");
+        location.href = "/";
+    } else {
+        alert("소셜 로그인에 실패했습니다.");
+        location.href = "/login";
+    }
+</script>
+
+</body>
+</html>

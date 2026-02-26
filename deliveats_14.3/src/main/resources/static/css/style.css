@@ -1,0 +1,179 @@
+/* 메인 홈페이지 디자인 */
+:root{
+    --baemin-mint: #2ac1bc;
+    --baemin-mint-dark: #24a9a4;
+
+    --yellow: #ffd66b;
+    --rider-orange: #FFA726;
+    --admin-red: #EF5350;
+
+    --ink-1: #111;
+    --ink-2: #333;
+    --ink-3: #666;
+
+    --bg-1: #f8fbfb;
+    --bg-2: #ffffff;
+
+    --line: #e9f2f2;
+
+    --shadow-1: 0 8px 20px rgba(0,0,0,0.06);
+    --shadow-2: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+/* 공통 설정 */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-1);
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--ink-2);
+}
+section.home {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 30px 20px 80px;
+}
+
+/* 공통 텍스트 */
+h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--ink-1);
+}
+h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 8px 0;
+}
+
+/* 검색 폼 */
+.search-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.search-form input[type="text"] {
+  flex: 1;
+  padding: 0 14px;
+  height: 48px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg-2);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.search-form input[type="text"]:focus {
+  outline: none;
+  border-color: var(--baemin-mint);
+  box-shadow: 0 0 0 4px rgba(42,193,188,0.15s);
+}
+.search-form button {
+  padding: 0 20px;
+  height: 48px;
+  background: var(--baemin-mint);
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.search-form button:hover {
+  background: var(--baemin-mint-dark);
+}
+
+/* 가게 목록 그리드 */
+.store-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* 가게 카드 */
+.store-card {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow-1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.store-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+}
+.store-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: var(--ink-3);
+}
+.store-card a {
+  margin-top: 12px;
+  display: inline-block;
+  padding: 10px 16px;
+  background: var(--baemin-mint);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: background 0.15s;
+}
+.store-card a:hover {
+  background: var(--baemin-mint-dark);
+}
+
+/* 빈 상태 */
+.empty-state {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: 15px;
+}
+
+/* Role 버튼 스타일 */
+.role-button-container {
+  margin-bottom: 24px;
+}
+.role-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.1s;
+}
+.role-btn:hover {
+  transform: translateY(-1px);
+}
+.owner-btn {
+  background: var(--baemin-mint);
+}
+.owner-btn:hover {
+  background: var(--baemin-mint-dark);
+}
+.rider-btn {
+  background: var(--rider-orange);
+}
+.rider-btn:hover {
+  background: #fb8c00;
+}
+.admin-btn {
+  background: var(--admin-red);
+}
+.admin-btn:hover {
+  background: #d84343;
+}
+
+/* 버튼 공통 */
+button {
+  cursor: pointer;
+}
+
+/* 기본 링크 스타일 */
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>주문 관리</title>
+    <link rel="stylesheet" th:href="@{/css/owner/order-manage.css}">
+</head>
+<body>
+
+<section layout:fragment="content" class="order-manage">
+
+    <h1 class="page-title">주문 관리</h1>
+
+    <!-- 상태 필터 -->
+    <div class="order-filter">
+        <button data-status="PAID" class="active">신규 주문</button>
+        <button data-status="COOKING">조리중</button>
+        <button data-status="DELIVERING">배달중</button>
+        <button data-status="COMPLETED">완료</button>
+    </div>
+
+    <!-- 주문 리스트 -->
+    <div id="orderList" class="order-list">
+        <!-- JS 렌더링 -->
+    </div>
+</section>
+
+<th:block layout:frgment="scripts">
+    <script type="module" th:src="@{/js/owner/order-manage.js}"></script>
+</th:block>
+</body>
+</html>

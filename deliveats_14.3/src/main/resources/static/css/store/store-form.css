@@ -1,0 +1,61 @@
+.store-form-section {
+    max-width: 520px;
+    margin: 60px auto;
+    padding: 40px 32px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+.store-form-section h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #2ac1bc;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* 폼 */
+.store-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.store-form label {
+    font-weight: 600;
+    font-size: 15px;
+    color: #333;
+}
+.store-form input, .store-form select {
+    height: 45px;
+    padding: 0 14px;
+    border: 2px solid #e5f2f2;
+    border-radius: 12px;
+    font-size: 15px;
+    background: white;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+.store-form input:focus, .store-form select:focus {
+    outline: none;
+    border-color: #2ac1bc;
+    box-shadow: 0 0 0 4px rgba(42,193,188,0.15);
+}
+
+/* 버튼 */
+#storeSubmitBtn {
+    margin-top: 18px;
+    height: 50px;
+    background: #2ac1bc;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+}
+#storeSubmitBtn:hover {
+    background: #24a9a4;
+}
+#storeSubmitBtn:active {
+    transform: translateY(1px);
+}

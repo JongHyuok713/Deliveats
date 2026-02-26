@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>가게 목록</title>
+    <link rel="stylesheet" th:href="@{/css/store/store-list.css}">
+</head>
+<body>
+<section class="store-list-container" layout:fragment="content">
+
+    <div class="store-list-header">
+        <div>
+            <h2 class="page-title">가게 둘러보기</h2>
+            <p class="page-subtitle">배달이 더 쉬워지는 순간, 원하는 가게를 찾아보세요.</p>
+        </div>
+
+        <button id="btnRegisterStore" class="btn-register-store"
+                style="display:none;" onclick="location.href='/stores/register'">
+            가게 등록하기
+        </button>
+    </div>
+
+    <div class="store-search-box sticky-search">
+        <form th:action="@{/stores}" method="get" class="search-form">
+            <input type="text" name="q" placeholder="가게 이름 검색..." th:value="${param.q}">
+            <button type="submit">검색</button>
+        </form>
+
+        <div class="filter-buttons">
+            <button type="button" data-filter="ALL" class="filter-btn-active">전체</button>
+            <button type="button" data-filter="한식" class="filter-btn">한식</button>
+            <button type="button" data-filter="치킨" class="filter-btn">치킨</button>
+            <button type="button" data-filter="중식" class="filter-btn">중식</button>
+            <button type="button" data-filter="일식" class="filter-btn">일식</button>
+            <button type="button" data-filter="피자" class="filter-btn">피자</button>
+            <button type="button" data-filter="분식" class="filter-btn">분식</button>
+        </div>
+    </div>
+
+    <div class="store-grid">
+        <div class="store-card" th:each="store : ${stores}"
+             th:attr="data-category=${store.category}">
+            <div class="store-img-wrap">
+                <img th:src="${store.imageUrl != null ? store.imageUrl : '/images/no-image.jpg'}"
+                     alt="가게 대표 이미지">
+            </div>
+
+            <div class="store-info">
+                <h3 th:text="${store.name}" class="store-name">가게 이름</h3>
+                <p class="store-category" th:text="${store.category}">카테고리</p>
+                <p class="store-address" th:text="${store.address}">주소</p>
+                <p class="min-order">
+                    최소 주문금액: <span th:text="${#numbers.formatInteger(store.minOrderPrice, 3, 'COMMA')}"></span>원
+                </p>
+
+                <button class="view-store-btn" type="button"
+                        th:data-store-id="${store.id}">가게 보기</button>
+            </div>
+        </div>
+    </div>
+
+    <div th:if="${#lists.isEmpty(stores)}" class="empty-state">
+        <p>아직 등록된 가게가 없습니다. 가장 먼저 가게를 등록해보세요!</p>
+    </div>
+</section>
+
+<th:block layout:fragment="scripts">
+    <script type="module" th:src="@{/js/store/store-list.js}"></script>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,154 @@
+/* 전체 컨테이너 */
+.my-store-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px 80px;
+}
+
+/* 가게 정보 */
+.store-info-box {
+    background: #fff;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid #e5ecec;
+}
+
+.store-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.store-category,
+.store-address,
+.store-min-price {
+    font-size: 15px;
+    color: #222;
+    margin: 4px 0;
+}
+
+/* 구분선 */
+.divider {
+    margin: 32px 0;
+    border: none;
+    height: 1px;
+    background: #e5ecec;
+}
+
+/* 공통 섹션 구조 */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.section-sub {
+    color: #888;
+    font-size: 13px;
+}
+
+/* 메뉴 추가 버튼 */
+.owner-add-menu-btn {
+    background: #2ac1bc;
+    color: #fff;
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.2s;
+}
+.owner-add-menu-btn:hover {
+    background: #24a9a4;
+}
+
+/* 메뉴 카드 */
+.menu-grid {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.menu-card {
+    background: #fff;
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.menu-owner-actions {
+    margin-top: 8px;
+    display: flex;
+    gap: 6px;
+}
+.menu-edit-btn,
+.menu-delete-btn {
+    flex: 1;
+    padding: 6px 0;
+    font-size: 13px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+}
+.menu-edit-btn {
+    background: #ffb83d;
+}
+.menu-delete-btn {
+    background: #ff6868;
+}
+
+/* 리뷰 카드 */
+.review-list {
+    margin-top: 16px;
+}
+
+.review-card {
+    background: white;
+    padding: 14px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border-left: 6px solid #2ac1bc;
+    margin-bottom: 12px;
+}
+
+.review-user {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.review-content {
+    color: #555;
+}
+
+.review-delete-btn {
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: #ff6868;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+}

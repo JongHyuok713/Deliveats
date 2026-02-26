@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>주문 확인 - Deliveats</title>
+    <link rel="stylesheet" th:href="@{/css/order/order-confirm.css}">
+</head>
+<body>
+<section class="order-confirm-container" layout:fragment="content">
+
+    <h1>주문 확인</h1>
+
+    <!-- 가게 정보 -->
+    <div class="order-store">
+        <h2 id="storeName">-</h2>
+    </div>
+
+    <!-- 주문 메뉴 -->
+    <div id="orderItems" class="order-items"></div>
+
+    <!-- 금액 -->
+    <div class="order-summary">
+        <div>
+            <span>총 결제금액</span>
+            <strong id="totalPrice">0원</strong>
+        </div>
+    </div>
+
+    <!-- 주문 버튼 -->
+    <button id="confirmOrderBtn" class="btn primary null">
+        주문하기
+    </button>
+</section>
+
+<th:block layout:fragment="scripts">
+    <script type="module" th:src="@{/js/order/order-confirm.js}"></script>
+</th:block>
+</body>
+</html>

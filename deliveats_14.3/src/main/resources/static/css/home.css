@@ -1,0 +1,93 @@
+.home {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+}
+
+.home-banner {
+    background: linear-gradient(135deg, #2ac1bc 0%, #29a5a0 100%);
+    padding: 70px 30px;
+    border-radius: 24px;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.home-banner h1 {
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+.home-banner p {
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: white;
+    color: #2ac1bc;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.25s ease;
+    margin-top: 20px;
+}
+.cta-btn:hover {
+    background: #f0fefe;
+    transform: translateY(-2px);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+}
+.feature-card {
+    background: #fff;
+    padding: 28px 22px 34px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #222;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+    border: 1px solid #e8f4f4;
+}
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.10);
+}
+
+.icon-circle {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 18px auto;
+    background: #e8faf9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.25s ease;
+}
+.feature-card:hover .icon-circle {
+    background: #d4f4f2;
+    transform: scale(1.08);
+}
+
+.icon-circle img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+.feature-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.feature-card p {
+    font-size: 15px;
+    color: #555;
+}

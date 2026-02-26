@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>메뉴 등록</title>
+    <link rel="stylesheet" th:href="@{/css/store/menu-form.css}">
+</head>
+<body>
+<section class="menu-form-wrapper" layout:fragment="content">
+
+    <h1 class="page-title">메뉴 등록</h1>
+
+    <div class="menu-form-container">
+        <input type="hidden" id="storeId" th:value="${storeId}">
+
+        <!-- 메뉴 등록 -->
+        <form id="menuRegisterForm" class="menu-form" onsubmit="return false;">
+
+            <label>메뉴 이름</label>
+            <input type="text" id="name" name="name" placeholder="예: 돈가스 정식" required>
+
+            <label>가격</label>
+            <input type="number" id="price" name="price" placeholder="예: 8900" min="0" required>
+
+            <label>이미지 URL (선택)</label>
+            <input type="text" id="imageUrl" placeholder="이미지 링크를 입력하세요">
+
+            <label>직접 이미지 업로드 (선택)</label>
+            <input type="file" id="uploadImage" accept="image/*">
+
+            <!-- 이미지 미리보기 -->
+            <div class="img-preview" id="imgPreview">
+                <p>이미지를 업로드하면 미리보기가 표시됩니다.</p>
+            </div>
+
+            <button type="button" id="menuSubmitBtn" class="submit-btn">
+                등록하기
+            </button>
+        </form>
+    </div>
+
+</section>
+
+<th:block layout:fragment="scripts">
+    <script type="module" th:src="@{/js/store/menu-form.js}"></script>
+</th:block>
+</body>
+</html>

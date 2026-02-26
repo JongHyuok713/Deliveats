@@ -1,0 +1,94 @@
+################################
+# OS / System Files
+################################
+.DS_Store
+Thumbs.db
+
+################################
+# IntelliJ IDEA
+################################
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+################################
+# VS Code
+################################
+.vscode/
+
+################################
+# STS / Eclipse
+################################
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+################################
+# Gradle
+################################
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+.gradle/
+*/build/
+
+################################
+# Logs
+################################
+logs/
+*.log
+*.log.*
+
+################################
+# Spring Boot / Profiles
+################################
+# 운영 배포용 YML 절대 GitHub 업로드 금지
+src/main/resources/application-prod.yml
+src/main/resources/application-aws.yml
+src/main/resources/application-secret.yml
+
+# OAuth 민감정보 제외
+src/main/resources/application-oauth-secret.yml
+
+#################################
+# Environment Files (절대 업로드 금지)
+#################################
+.env
+.env.*
+*.env
+
+#################################
+# Security Keys / Certificates
+#################################
+*.pem
+*.key
+*.crt
+*.jks
+*.p12
+
+##################################
+# Lombok
+##################################
+lombok.config
+
+##################################
+# Misc
+##################################
+*.class
+*.war
+*.jar
+*.dump
+*.hprof

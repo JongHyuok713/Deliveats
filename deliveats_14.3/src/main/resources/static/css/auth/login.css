@@ -1,0 +1,123 @@
+/* 로그인 페이지 스타일 */
+/* 전체 컨테이너 */
+.login-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 40px 32px 48px;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 제목 */
+.login-container h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #2ac1bc;
+    margin-bottom: 28px;
+}
+
+/* 폼 구성 */
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+#loginForm label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+    font-size: 15px;
+}
+#loginForm input {
+    height: 45px;
+    padding: 0 14px;
+    border: 2px solid #e5f2f2;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+#loginForm input::placeholder {
+    color: #a0b9b9;
+}
+#loginForm input:focus {
+    outline: none;
+    border-color: #2ac1bc;
+    box-shadow: 0 0 0 4px rgba(42, 193, 188, 0.15);
+}
+
+/* 로그인 버튼 */
+#loginBtn {
+    margin-top: 10px;
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    background: #2ac1bc;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+}
+#loginBtn:hover {
+    background: #24a9a4;
+}
+#loginBtn:active {
+    transform: translateY(1px);
+}
+
+/* 회원가입 링크 */
+.login-container p {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #555;
+}
+.login-container a {
+    color: #2ac1bc;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+.gsi-material-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0 8px;
+    height: 48px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba(0,0,0,0.87);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.gsi-material-button:hover {
+    background: #f7f7f7;
+}
+.gsi-material-button:active {
+    background: #eeeeee;
+}
+.gsi-material-button-contentwrapper {
+    display: flex;
+    align-items: center;
+}
+
+.gsi-material-button-icon {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+}
+.gsi-material-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66,133,244,0.3);
+}

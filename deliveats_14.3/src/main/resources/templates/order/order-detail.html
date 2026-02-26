@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>주문 상세 - Deliveats</title>
+    <link rel="stylesheet" th:href="@{/css/order/order-detail.css}">
+</head>
+<body>
+<section class="order-detail-container">
+
+    <h1>주문 상세</h1>
+
+    <div id="orderInfo" class="order-info-box"></div>
+
+    <h2>주문 메뉴</h2>
+    <div id="orderItems" class="order-items"></div>
+
+    <div class="total-price-box">
+        <p>총 결제 금액: <span id="detailTotalPrice"></span></p>
+    </div>
+
+</section>
+
+<script type="module" th:src="@{/js/order/order-detail.js}"></script>
+</body>
+</html>

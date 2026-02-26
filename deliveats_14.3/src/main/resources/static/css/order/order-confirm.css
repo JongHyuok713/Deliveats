@@ -1,0 +1,50 @@
+.order-confirm-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.summary-box {
+    padding: 18px;
+    border-radius: 12px;
+    background: #fafafa;
+    margin-bottom: 24px;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+.form-box input, .form-box textarea, .form-box select {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.total-price-box {
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.pay-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background: #ff6b00;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.pay-btn:hover {
+    background: #e85d00;
+}

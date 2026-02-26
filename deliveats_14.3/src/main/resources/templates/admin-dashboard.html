@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section class="admin-dashboard" layout:fragment="content">
+    <h1>관리자 대시보드</h1>
+
+    <!-- 통계 요약 -->
+    <div class="dashboard-summary">
+        <div class="summary-card">
+            <h2>총 회원 수</h2>
+            <p th:text="${userCount} + ' 명'"></p>
+        </div>
+        <div class="summary-card">
+            <h2>총 매출</h2>
+            <p th:text="${totalSales} + ' 원'"></p>
+        </div>
+        <div class="summary-card">
+            <h2>진행중인 주문</h2>
+            <p th:text="${inProgressCount} + ' 건'"></p>
+        </div>
+        <div class="summary-card">
+            <h2>완료된 주문</h2>
+            <p th:text="${completedCount} + ' 건'"></p>
+        </div>
+    </div>
+
+    <!-- 상세 통계 -->
+    <div class="dashboard-detail">
+        <h3>매출 추이 (향후 Chart.js 적용 예정)</h3>
+        <p>추후 그래프, 테이블 형태로 추가</p>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+.owner-order-dashboard {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+.order-status-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+.order-status-tabs .tabs {
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: #eee;
+    cursor: pointer;
+    font-weight: bold;
+}
+.order-status-tabs .active {
+    background: #2ac1bc;
+    color: white;
+}
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.order-card {
+    padding: 16px;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+}
+.order-card h3 {
+    margin-bottom: 8px;
+}
+.order-card p {
+    margin-bottom: 4px;
+}
+.order-card button {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Deliveats - 홈</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<section class="home" layout:fragment="content">
+
+    <div class="home-banner">
+        <h1>배달이 더 쉬워지는 순간, Deliveats</h1>
+        <p>원하는 음식을 빠르고 편리하게 만나보세요.</p>
+
+        <a class="cta-btn" th:href="@{/stores}">가게 둘러보기</a>
+    </div>
+
+    <div class="features">
+        <a th:href="@{/delivery-info}" class="feature-card">
+            <div class="icon-circle">
+                <img src="/images/icons/delivery.png" alt="빠른 배달">
+            </div>
+            <h3>빠른 배달</h3>
+            <p>원하는 음식을 쉽고 빠르게 주문하세요.</p>
+        </a>
+
+        <a th:href="@{/stores}" class="feature-card">
+            <div class="icon-circle">
+                <img src="/images/icons/store.png" alt="다양한 가게">
+            </div>
+            <h3>다양한 가게</h3>
+            <p>한식, 치킨, 중식 등 다양한 가게를 제공합니다.</p>
+        </a>
+
+        <a th:href="@{reviews}" class="feature-card">
+            <div class="icon-circle">
+                <img src="/images/icons/review.png" alt="리뷰 시스템">
+            </div>
+            <h3>리뷰 시스템</h3>
+            <p>실제 사용자 리뷰를 보고 더 똑똑하게 선택하세요.</p>
+        </a>
+    </div>
+
+</section>
+</body>
+</html>

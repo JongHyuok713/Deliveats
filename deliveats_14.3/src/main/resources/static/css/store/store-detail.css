@@ -1,0 +1,165 @@
+.store-detail-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px 80px;
+}
+
+.store-header {
+    width: 100%;
+    height: 260px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+.store-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 가게 정보 */
+.store-info {
+    margin-top: 20px;
+}
+
+.store-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.store-meta p {
+    display: flex;
+    justify-content: space-between;
+    background: #f7fafa;
+    padding: 10px 14px;
+    border-radius: 12px;
+    margin: 6px 0;
+    font-size: 15px;
+}
+.store-meta span {
+    color: #666;
+}
+
+/* 메뉴 등록 버튼 (점주 전용) */
+.owner-actions {
+    margin-top: 16px;
+}
+.edit-store-btn {
+    padding: 12px 18px;
+    background: #2ac1bc;
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.edit-store-btn:hover {
+    background: #24a9a4;
+    transform: translateY(-2px);
+}
+
+/* 섹션 구분선 */
+.divider {
+    margin: 30px 0;
+    border: none;
+    height: 1px;
+    background: #e5ecec;
+}
+
+/* 메뉴 리스트 */
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+}
+.menu-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: 0.25s;
+    cursor: pointer;
+}
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.menu-img {
+    width: 100%;
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.menu-info {
+    margin-top: 10px;
+}
+.menu-info h3 {
+    margin: 4px 0;
+    font-size: 17px;
+    font-weight: 700;
+}
+.menu-info p {
+    color: #333;
+    font-size: 14px;
+}
+
+/* 장바구니 카트 담기 */
+.btn-cart {
+    background: #2ac1bc;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+    margin-top: 6px;
+}
+.btn-cart:hover {
+    background-color: #22a7a2;
+}
+
+/* 리뷰 */
+.review-card {
+    background: #fff;
+    padding: 14px;
+    margin-bottom: 12px;
+    border-radius: 23px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+.review-user {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.review-date {
+    font-size: 12px;
+    margin-top: 8px;
+    color: #666;
+}
+
+/* 빈 상태 */
+.empty-section {
+    padding: 40px 0;
+    text-align: center;
+    color: #666;
+}
+
+@media (max-width: 600px) {
+    .store-title {
+        font-size: 26px;
+    }
+}

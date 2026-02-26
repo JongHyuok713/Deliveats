@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>리뷰 작성 Form</title>
+</head>
+<body>
+<section class="review-form" layout:fragment="content">
+    <h1>리뷰 작성</h1>
+    <form th:action="@{/reviews/create}" th:object="${reviewForm}" method="post">
+        <input type="hidden" th:field="*{orderId}" th:value="${orderId}"/>
+
+        <label>평점 (1~5):
+            <input type="number" min="1" max="5" th:field="*{rating}" required>
+        </label><br>
+
+        <label>리뷰 내용:
+            <textarea th:field="*{content}" rows="4" cols="40"></textarea>
+        </label><br>
+
+        <button type="submit">리뷰 등록</button>
+    </form>
+</section>
+
+</body>
+</html>

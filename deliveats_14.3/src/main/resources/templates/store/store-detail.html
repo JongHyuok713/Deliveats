@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${store.name} + ' - Deliveats'"></title>
+    <link rel="stylesheet" th:href="@{/css/store/store-detail.css}">
+</head>
+<body>
+<section layout:fragment="content" class="store-detail-container">
+
+    <!-- 대표 이미지 -->
+    <div class="store-header">
+        <img class="store-main-img"
+             th:src="@{${store.mainImage != null ? store.mainImage : '/images/no-image.jpg'}}"
+             alt="Store Image">
+    </div>
+
+    <!-- 가게 정보 -->
+    <div class="store-info">
+        <h1 class="store-title" th:text="${store.name}"></h1>
+
+        <div class="store-meta">
+            <p><span>카테고리</span> <strong th:text="${store.category}"></strong></p>
+            <p><span>주소</span> <strong th:text="${store.address}"></strong></p>
+            <p><span>최소 주문금액</span>
+                <strong th:text="${#numbers.formatInteger(store.minOrderPrice, 3, 'COMMA')} + '원'"></strong>
+            </p>
+        </div>
+
+        <!-- 점주 전용 수정 버튼 -->
+        <div class="owner-actions"
+             th:if="${#authorization.expression('isAuthenticated() and hasRole(''OWNER'')')
+                    and #authentication.principal.userId == store.owner.id}">
+            <button class="edit-store-btn"
+                    th:onclick="'location.href=\'/stores/' + ${store.id} + '/edit\''">
+                가게 수정하기
+            </button>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 메뉴 목록 -->
+    <h2 class="section-title">메뉴</h2>
+    <div class="menu-list">
+        <div class="menu-card" th:each="menu : ${store.menus}">
+            <img th:src="@{${menu.imageUrl != null ? menu.imageUrl : '/images/no-image.jpg'}}"
+                 class="menu-img"/>
+
+            <div class="menu-info">
+                <h3 th:text="${menu.name}"></h3>
+                <p th:text="${#numbers.formatInteger(menu.price, 3, 'COMMA')} + '원'"></p>
+            </div>
+
+            <!-- USER 전용 담기 버튼 -->
+            <button class="btn-cart"
+                    th:data-menu-id="${menu.id}"
+                    th:data-menu-name="${menu.name}"
+                    th:data-menu-price="${menu.price}"
+                    th:data-menu-image="${menu.imageUrl}"
+                    th:data-store-id="${store.id}">
+                장바구니 담기
+            </button>
+        </div>
+    </div>
+
+    <div th:if="${#lists.isEmpty(store.menus)}" class="empty-section">
+        <p>등록된 메뉴가 없습니다.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 리뷰 목록 -->
+    <h2 class="section-title">리뷰</h2>
+    <div th:if="${reviews != null and !reviews.isEmpty()}" class="review-list">
+        <div class="review-card" th:each="r : ${reviews}">
+            <p class="review-user" th:text="${r.userName}"></p>
+            <p class="review-content" th:text="${r.content}"></p>
+            <p class="review-date" th:text="${#temporals.format(r.createdAt, 'yyyy-MM-dd')}"></p>
+        </div>
+    </div>
+
+    <div th:if="${reviews == null or #lists.isEmpty(reviews)}" class="empty-section">
+        <p>작성된 리뷰가 없습니다.</p>
+    </div>
+</section>
+<th:block layout:fragment="scripts">
+    <script type="module" th:src="@{/js/store/store-detail.js}"></script>
+    <script type="module" th:src="@{/js/store/menu-detail.js}"></script>
+</th:block>
+</body>
+</html>

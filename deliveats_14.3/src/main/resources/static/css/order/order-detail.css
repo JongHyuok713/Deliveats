@@ -1,0 +1,32 @@
+.order-detail-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.order-info-box {
+    padding: 16px;
+    border-radius: 12px;
+    background: #fafafa;
+    margin-bottom: 20px;
+}
+
+.order-items .item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.total-price-box {
+    padding: 18px;
+    margin-top: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}

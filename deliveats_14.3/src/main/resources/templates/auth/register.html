@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link rel="stylesheet" th:href="@{/css/auth/register.css}">
+</head>
+<body>
+<div layout:fragment="content" class="register-container">
+    <h2>회원가입</h2>
+
+    <form id="registerForm">
+        <label>아이디</label>
+        <input type="text" id="username" placeholder="아이디를 입력하세요" required>
+
+        <label>비밀번호</label>
+        <input type="password" id="password" placeholder="비밀번호를 입력하세요" required>
+
+        <label>역할</label>
+        <select id="role" required>
+            <option value="USER">고객</option>
+            <option value="OWNER">점주</option>
+            <option value="RIDER">배달원</option>
+        </select>
+
+        <label>주소</label>
+        <input type="text" id="address" placeholder="주소를 입력하세요">
+
+        <label>전화번호</label>
+        <input type="text" id="phone" placeholder="연락처를 입력하세요">
+
+        <button type="submit">회원가입</button>
+    </form>
+
+    <p>이미 계정이 있으신가요? <a th:href="@{/login}">로그인</a></p>
+</div>
+
+<th:block layout:fragment="scripts">
+    <script type="module" th:src="@{/js/auth/register.js}"></script>
+</th:block>
+</body>
+</html>

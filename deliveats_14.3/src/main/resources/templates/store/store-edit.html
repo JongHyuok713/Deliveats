@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>가게 정보 수정</title>
+    <link rel="stylesheet" th:href="@{/css/store/store-edit.css}">
+</head>
+<body>
+<section class="store-edit-wrapper" layout:fragment="content">
+    <h1 class="page-title">가게 정보 수정</h1>
+
+    <div class="editor-container">
+        <input type="hidden" id="storeId" th:value="${storeId}">
+
+        <!-- 대표 이미지 -->
+        <div class="image-section">
+            <h3>대표 이미지</h3>
+
+            <div id="imagePreview" class="image-preview">
+                <p>이미지를 선택하거나 업로드하세요.</p>
+            </div>
+
+            <label class="upload-btn">
+                이미지 업로드
+                <input type="file" id="uploadImage" accept="image/*">
+            </label>
+
+            <input type="text" id="imageUrl" placeholder="직접 이미지 URL을 입력 (선택)">
+        </div>
+
+        <!-- 기본 정보 입력 -->
+        <form class="store-edit-form" onsubmit="return false;">
+
+            <label>가게 이름</label>
+            <input type="text" id="name" required>
+
+            <label>카테고리</label>
+            <input type="text" id="category" required>
+
+            <label>주소</label>
+            <input type="text" id="address" required>
+
+            <label>최소 주문 금액</label>
+            <input type="number" id="minOrderPrice" required min="0">
+
+            <button id="saveStoreBtn" class="save-btn">
+                저장하기
+            </button>
+        </form>
+    </div>
+
+</section>
+
+<th:block layout:fragment="scripts">
+    <script type="module" th:src="@{/js/store/store-edit.js}"></script>
+</th:block>
+</body>
+</html>
