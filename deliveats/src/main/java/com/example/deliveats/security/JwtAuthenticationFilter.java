@@ -2,6 +2,7 @@ package com.example.deliveats.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -39,16 +40,34 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
 
+        String token = resolveToken(req);
+
+        if (token != null && tokenProvider.validate(token)) {
+            Authentication auth = tokenProvider.getAuthentication(token);
+            SecurityContextHolder.getContext().setAuthentication(auth);
+        }
+
+        chain.doFilter(req, res);
+    }
+
+    private String resolveToken(HttpServletRequest req) {
+        // Authorization 헤더
         String header = req.getHeader(HttpHeaders.AUTHORIZATION);
         if (header != null && header.startsWith("Bearer ")) {
-            String token = header.substring(7);
-            if (tokenProvider.validate(token)) {
-                Authentication auth = tokenProvider.getAuthentication(token);
-                SecurityContextHolder.getContext().setAuthentication(auth);
+            return header.substring(7);
+        }
+
+        // accessToken 쿠키 fallback
+        Cookie[] cookies = req.getCookies();
+        if (cookies != null) {
+            for (Cookie c : cookies) {
+                if (CookieTokenService.ACCESS_COOKIE_NAME.equals(c.getName())) {
+                    return c.getValue();
+                }
             }
         }
-        chain.doFilter(req, res);
+        return null;
     }
 }

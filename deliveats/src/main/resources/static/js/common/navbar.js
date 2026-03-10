@@ -4,7 +4,6 @@ console.log("navbar.js loaded");
 
 document.addEventListener("DOMContentLoaded", ()=> {
     initNavbar();
-    updateCartIconUI();
 });
 
 async function initNavbar() {
@@ -84,11 +83,17 @@ function applyUserUI(els, user) {
     const role = user.role;
 
     // 공통 로그인 UI
-    els.cart.classList.remove("hidden");
     els.profileWrapper.classList.remove("hidden");
 
     // 역할별 메뉴
-    if (role === "USER") els.user.classList.remove("hidden");
+    if (role === "USER") {
+        els.user.classList.remove("hidden");
+        els.cart.classList.remove("hidden");
+        updateCartIconUI();
+    } else {
+        els.cart && els.cart.classList.add("hidden");
+    }
+    
     if (role === "OWNER") els.owner.classList.remove("hidden");
     if (role === "RIDER") els.rider.classList.remove("hidden");
     if (role === "ADMIN") els.admin.classList.remove("hidden");

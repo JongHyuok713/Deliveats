@@ -8,13 +8,39 @@ import org.springframework.stereotype.Component;
 @Component
 public class CookieTokenService {
 
+    public static final String ACCESS_COOKIE_NAME = "accessToken";
     public static final String REFRESH_COOKIE_NAME = "refreshToken";
+
+    @Value("${jwt.access-token-validity-seconds}")
+    private long accessTtlSeconds;
 
     @Value("${jwt.refresh-token-validity-seconds}")
     private long refreshTtlSeconds;
 
-    // 개발(Local http)환경 에서는 secure=false
-    // 운영(https)환경 에서는 secure=true
+    // 개발(Local http)환경 - secure=false
+    // 운영(https)환경 - secure=true
+    public void setAccessTokenCookie(HttpServletResponse response, String accessToken, boolean secure) {
+        ResponseCookie cookie = ResponseCookie.from(ACCESS_COOKIE_NAME, accessToken)
+                .httpOnly(true)
+                .secure(secure)
+                .path("/")
+                .sameSite("Lax")
+                .maxAge(accessTtlSeconds)
+                .build();
+        response.addHeader("Set-Cookie", cookie.toString());
+    }
+
+    public void clearAccessTokenCookie(HttpServletResponse response, boolean secure) {
+        ResponseCookie cookie = ResponseCookie.from(ACCESS_COOKIE_NAME, "")
+                .httpOnly(true)
+                .secure(secure)
+                .path("/")
+                .sameSite("Lax")
+                .maxAge(0)
+                .build();
+        response.addHeader("Set-Cookie", cookie.toString());
+    }
+
     public void setRefreshTokenCookie(HttpServletResponse response, String refreshToken, boolean secure) {
         ResponseCookie cookie = ResponseCookie.from(REFRESH_COOKIE_NAME, refreshToken)
                 .httpOnly(true)

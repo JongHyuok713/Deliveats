@@ -64,6 +64,10 @@ public class AuthController {
         String refreshToken = authService.issueRefreshToken(user);
 
         boolean secure = httpReq.isSecure();
+
+        // accessToken 쿠키
+        cookieTokenService.setAccessTokenCookie(httpRes, accessToken, secure);
+        // refreshToken 쿠키
         cookieTokenService.setRefreshTokenCookie(httpRes, refreshToken, secure);
 
         return new TokenResponse(accessToken);
@@ -80,6 +84,10 @@ public class AuthController {
         String newRefreshToken = authService.issueRefreshToken(user);
 
         boolean secure = httpReq.isSecure();
+
+        // accessToken 쿠키 갱신
+        cookieTokenService.setAccessTokenCookie(httpRes, newAccessToken, secure);
+        // refreshToken 쿠키 갱신
         cookieTokenService.setRefreshTokenCookie(httpRes, newRefreshToken, secure);
 
         return new TokenResponse(newAccessToken);
@@ -89,6 +97,7 @@ public class AuthController {
     @PostMapping("/logout")
     public void logout(HttpServletRequest httpReq, HttpServletResponse httpRes) {
         boolean secure = httpReq.isSecure();
+        cookieTokenService.clearAccessTokenCookie(httpRes, secure);
         cookieTokenService.clearRefreshTokenCookie(httpRes, secure);
     }
 

@@ -6,10 +6,7 @@ spring:
     active: dev
 
   config:
-    import:
-      - application-dev.yml
-      - application-prod.yml
-      - application-oauth.yml
+    import: optional:classpath:/application-oauth.yml
 
   thymeleaf:
     prefix: classpath:/templates/
